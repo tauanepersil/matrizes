@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <input  type = " number " id = " linha1Coluna0 "   placeholder = " [1,0] " />
+    <Entrada  Tipo = " número " ID =" linha1Coluna1 "   marcador =" [1,1] " /> <l /> <l />
+    <button  onclick = " calcularDeterminante () " > Determinante Calcular </button >
+
+    <p id = " resposta " > </p > 
+    <script >
+
+        function  calcularDeterminante ( ) {
+            // ela
+            var  matriz2x2  =  [
+            [ 0 , 0 ] ,
+            [ 0 , 0 ]
+            ] ;
+
+            // acesso aos valores dessa matriz
+            // nomeMatriz [linha] [coluna]
+            matriz2x2 [ 0 ] [ 0 ]  =  parseInt ( document . getElementById ( "linha0Coluna0" ) . value ) ;
+            matriz2x2 [ 0 ] [ 1 ]  =  parseInt ( document . getElementById ( "linha0Coluna1" ) . value ) ;
+            matriz2x2 [ 1 ] [ 0 ]  =  parseInt ( document . getElementById ( "linha1Coluna0" ) . value ) ;
+            matriz2x2 [ 1 ] [ 1 ]  =  parseInt ( document . getElementById ( "linha1Coluna1" ) . value ) ;
+
+            var  determinante2x2  =  matriz2x2 [ 0 ] [ 0 ] * matriz2x2 [ 1 ] [ 1 ] - matriz2x2 [ 0 ] [ 1 ] * matriz2x2 [ 1 ] [ 0 ] ;
+            console . log ( `O determinante de E $ { determinante2x2 } ` ) ;
+            documento . getElementById ( "resposta" ) =  `O determinante de E $ { determinante2x2 } ` ;
+        }
+
+    </script>
+</body>
+</html>

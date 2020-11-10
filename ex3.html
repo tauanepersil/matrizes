@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input  type = " number " id = " linha1Coluna0 "   placeholder = " [1,0] " />
+    <Entrada  Tipo = " número " ID =" linha1Coluna1 "   marcador =" [1,1] " /> <l /> <l />
+    <button  onclick = " calcularDeterminante () " > Determinante Calcular </button >
+
+        <p id="resultado"></p>
+
+    <script>
+
+function  calcularDeterminante ( ) {
+        var matriz3x3 = [
+            [ 0 , 0 , 0 ] ,
+            [ 0 , 0 , 0 ] ,
+            [ 0 , 0 , 0 ]
+            ];
+
+            matriz2x2 [ 0 ] [ 0 ]  =  parseInt ( document . getElementById ( "linha0Coluna0" ) . value ) ;
+            matriz2x2 [ 1 ] [ 1 ]  =  parseInt ( document . getElementById ( "linha0Coluna1" ) . value ) ;
+            matriz2x2 [ 2 ] [ 2 ]  =  parseInt ( document . getElementById ( "linha1Coluna0" ) . value ) ;
+            matriz2x2 [ 0 ] [ 1 ]  =  parseInt ( document . getElementById ( "linha1Coluna1" ) . value ) ;
+            matriz2x2 [ 1 ] [ 2 ]  =  parseInt ( document . getElementById ( "linha0Coluna0" ) . value ) ;
+            matriz2x2 [ 2 ] [ 0 ]  =  parseInt ( document . getElementById ( "linha0Coluna1" ) . value ) ;
+            matriz2x2 [ 0 ] [ 2 ]  =  parseInt ( document . getElementById ( "linha1Coluna0" ) . value ) ;
+            matriz2x2 [ 1 ] [ 0 ]  =  parseInt ( document . getElementById ( "linha1Coluna1" ) . value ) ;
+            matriz2x2 [ 2 ] [ 1 ]  =  parseInt ( document . getElementById ( "linha1Coluna1" ) . value ) ;
+
+        var diagonalPrincipal = matriz3x3[0][0]*matriz3x3[1][1]*matriz3x3[2][2]+
+                                matriz3x3[0][1]*matriz3x3[1][2]*matriz3x3[2][0]+
+                                matriz3x3[0][2]*matriz3x3[1][0]*matriz3x3[2][1];
+
+        var diagonalSecundaria = matriz3x3[2][0]*matriz3x3[1][1]*matriz3x3[0][2]+
+                                 matriz3x3[2][1]*matriz3x3[1][2]*matriz3x3[0][0]+
+                                 matriz3x3[2][2]*matriz3x3[1][0]*matriz3x3[0][1];
+
+        var determinante = diagonalPrincipal - diagonalSecundaria
+            document.getElementById("resultado").InnerHTML = `O determinante 3x3 E ${ determinante }`; 
+
+}            
+    </script>
+</body>
+</html>
